@@ -44,8 +44,9 @@ body {
 
 button{
     text-shadow: 6px 8px 6px #4d4d4d;
-    filter: drop-shadow(4px 8px 10px #4d4d4d)
+    filter: drop-shadow(4px 8px 10px #4d4d4d);
 }
+
 .buttons-container button {
   cursor: pointer;
   padding: 15px 30px;
