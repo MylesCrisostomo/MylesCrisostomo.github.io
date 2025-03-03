@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Summative 3</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-calcu">
+        <input type="text" class="screen" id="screen" disabled>
+        <div class="keys">
+            <button onclick="clearScr()">C</button>
+            <button onclick="backspace()">&loarr;</button>
+            <button class="operation" onclick="activateKey('/')">÷</button>
+            <button class="operation" onclick="activateKey('*')">×</button>
+            <button onclick="activateKey('7')">7</button>
+            <button onclick="activateKey('8')">8</button>
+            <button onclick="activateKey('9')">9</button>
+            <button class="operation" onclick="activateKey('-')">−</button>
+            <button onclick="activateKey('4')">4</button>
+            <button onclick="activateKey('5')">5</button>
+            <button onclick="activateKey('6')">6</button>
+            <button class="operation" onclick="activateKey('+')">+</button>
+            <button onclick="activateKey('1')">1</button>
+            <button onclick="activateKey('2')">2</button>
+            <button onclick="activateKey('3')">3</button>
+            <button class="result" onclick="calculate()">=</button>
+            <button class="zero" onclick="activateKey('0')">0</button>
+            <button class="decimal" onclick="activateKey('.')">.</button>
+            
+        </div>
+    </div>
+
+    <script>
+        const screen = document.querySelector(".screen");
+
+        function activateKey(value) { screen.value += value; }
+        function clearScr() { screen.value = ''; }
+        function backspace() { screen.value = screen.value.slice(0, -1); }
+        function calculate() {
+            try {
+                screen.value = new Function('return ' + screen.value)() || '';
+            } catch {
+                screen.value = 'error';
+            }
+        }
+    </script>
+</body>
+</html>
