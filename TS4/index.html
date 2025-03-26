@@ -12,42 +12,51 @@
     <h1>Classic Filipino Menu</h1>
     <h2>Restaurant Guide</h2>
 
-    <div class="menu-container">
-        <div class="menu-card" data-bs-toggle="modal" data-bs-target="#lumpiaModal">
-            <img src="img/lumpia-shanghai.jpg" alt="Lumpiang Shanghai">
-            <h4>Lumpiang Shanghai</h4>
-            <div class="menu-card-text">
-                <p>Crispy spring rolls served with sweet and sour sauce.</p>
-            </div>
-            
-        </div>
-        <div class="menu-card" data-bs-toggle="modal" data-bs-target="#inasalModal">
-            <img src="img/chicken-inasal.jpg" alt="Chicken Inasal">
-            <h4>Chicken Inasal</h4>
-            <div class="menu-card-text">
-                <p>Grilled chicken marinated in calamansi, annatto, and spices.</p>
-            </div>
-        </div>
-        <div class="menu-card" data-bs-toggle="modal" data-bs-target="#lecheFlanModal">
-            <img src="img/leche-flan.jpg" alt="Leche Flan">
-            <h4>Leche Flan</h4>
-            <div class="menu-card-text">
-                <p>A rich and creamy caramel custard dessert.</p>
-            </div>   
-        </div>
-        <div class="menu-card" data-bs-toggle="modal" data-bs-target="#sinigangModal">
-            <img src="img/sinigang.jpg" alt="Sinigang">
-            <h4>Sinigang</h4>
-            <div class="menu-card-text">
-                <p>A savory and tangy pork soup with tamarind broth and vegetables.</p> 
-            </div>
-            
+    <div class="container">
+        <div class="menu-container">
+            <div class="menu-card" ddata-dish="lumpia" onclick="openPopup('lumpia')">
+                
+                <img src="img/lumpia-shanghai.jpg" alt="Lumpiang Shanghai">
+                <h4>Lumpiang Shanghai</h4>
+                <div class="menu-card-text">
+                    <p>Crispy spring rolls served with sweet and sour sauce.</p>
+                </div>
+            </div> <!-- menu-card -->
+
+            <div class="menu-card" data-bs-toggle="modal" data-bs-target="#inasalModal">
+                <img src="img/chicken-inasal.jpg" alt="Chicken Inasal">
+                <h4>Chicken Inasal</h4>
+                <div class="menu-card-text">
+                    <p>Grilled chicken marinated in calamansi, annatto, and spices.</p>
+                </div>
+            </div> <!-- menu-card -->
+
+            <div class="menu-card" data-bs-toggle="modal" data-bs-target="#lecheFlanModal">
+                <img src="img/leche-flan.jpg" alt="Leche Flan">
+                <h4>Leche Flan</h4>
+                <div class="menu-card-text">
+                    <p>A rich and creamy caramel custard dessert.</p>
+                </div>   
+            </div> <!-- menu-card -->
+
+            <div class="menu-card" data-bs-toggle="modal" data-bs-target="#sinigangModal">
+                <img src="img/sinigang.jpg" alt="Sinigang">
+                <h4>Sinigang</h4>
+                <div class="menu-card-text">
+                    <p>A savory and tangy pork soup with tamarind broth and vegetables.</p> 
+                </div>
+            </div> <!-- menu-card -->       
+        </div> <!-- menu-container -->
+
+        <!-- Full-Screen Pop-up -->
+        <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <img id="popup-image" src="" alt="">
+            <p id="popup-description"></p>
         </div>
     </div>
-
-    <button id="closeAllModals" class="btn-main-menu">Main Menu</button>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

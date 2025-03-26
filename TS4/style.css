@@ -1,83 +1,172 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('img/bg-handaan.png');
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-        body {
-            background: url('img/bg-handaan.png') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 3rem;
-            color: orange;
-            margin-top: 20px;
-        }
-        h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .menu-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-        .menu-card {
-            background-color: #efefef;
-            padding: 15px;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            width: 215px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-            height: 400px;
-            position: relative;
-        }
-        .menu-card img {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .menu-card h4 {
-            color: black;
-            margin-top: 10px;
-            font-size: 18px;
-        }
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.436); /* Change color and opacity */
+    z-index: -1;
+}
 
-        .menu-card-text p {
-            background-color: #efefef;
-            opacity: 0;
-            font-size: 14px;
-            color: black;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-        }
-        .menu-card:hover img {
-            transform: scale(1.1);
-        }
-        .menu-card:hover p {
-            opacity: 1;
-        }
-        .btn-main-menu {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            background-color: orange;
-            color: black;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-            font-weight: bold;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
+h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 3rem;
+    color: orange;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+        
+.menu-card {
+    background-color: #efefef;
+    padding: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    width: 215px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+}
+    
+.menu-card img {
+    width: 100%;
+    height: 360px;
+    border-radius: 10px 10px 0px 0px;
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+}
+        
+.menu-card h4 {
+    color: black;
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.menu-card-text p {
+    background-color: #efefef;
+    opacity: 0;
+    font-size: 14px;
+    color: black;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 20%;
+    padding-top: 18px;
+}
+        
+.menu-card:hover {
+    transform: scale(1.1);
+}
+
+.menu-card:hover p {
+    opacity: 1;
+}
+
+.menu-card:hover h4 {
+    opacity: 0;
+}
+
+
+.btn-main-menu {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: orange;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+        
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none; 
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+        
+        
+.popup-overlay.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto; 
+}
+        
+        
+.popup-content {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 3px solid orange; 
+    padding: 20px 50px;
+    border-radius: 12px;
+    text-align: center;
+    font-size:x-large;
+    max-width: 60%;
+    max-height: 80%;
+    overflow:hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+        
+#popup-image {
+    width: 40%;  
+    max-width: 400px; 
+    height: auto; 
+    border-radius: 8px; 
+    margin: 20px auto; 
+}
+        
+        
+.popup-overlay.closing {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
