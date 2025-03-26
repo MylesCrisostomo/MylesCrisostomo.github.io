@@ -1,60 +1,67 @@
 const dishes = {
-    sushi: {
-        title: "lumpia-shanghai",
-        image: "http://www.kalesagrill.com/wp-content/uploads/lumpia-shanghai.jpg",
-        description: "A delicate balance of vinegared rice and fresh ingredients, sushi is a celebrated Japanese dish that highlights the natural flavors of seafood, vegetables, and sometimes egg. Whether you choose nigiri (hand-pressed rice with toppings), maki (rolled sushi with seaweed), or sashimi (sliced raw fish), each bite offers a harmonious blend of texture and taste, often paired with soy sauce, wasabi, and pickled ginger for the perfect experience.",   
-    },
-    ramen: {
-        title: "Ramen",
-        image: "https://media.istockphoto.com/id/1057974668/photo/japanese-traditional-food-ramen.jpg?s=612x612&w=0&k=20&c=VX0Qhoz8IQ23g_GLzsvlca_vTSHaX7hn4Rg3DLWdzDI=",
-        description: "A soul-warming bowl of Japanese noodles in a rich, flavorful broth, ramen is a comfort food loved by many. With various styles such as shoyu (soy sauce-based), miso (fermented soybean paste-based), tonkotsu (pork bone broth), and shio (salt-based), each bowl offers a unique depth of umami. Topped with sliced pork, green onions, seaweed, and a soft-boiled egg, ramen is a satisfying dish that fills both the stomach and the heart."
-    },
-    tempura: {
-        title: "Tempura",
-        image: "https://media.istockphoto.com/id/184274745/photo/shrimp-tempura.jpg?s=612x612&w=0&k=20&c=ppPL66ltwxosupIEQBUe7FZKgfRX3fIik3KkFPB8phA=",
-        description: "A crispy and light delight, tempura features seafood or vegetables coated in a delicate batter and deep-fried to golden perfection. Unlike heavy fried foods, Japanese tempura is known for its airy texture and subtle seasoning, allowing the fresh ingredients to shine. Served with a light dipping sauce or sprinkled with salt, it’s an irresistible dish that pairs wonderfully with rice or noodles."
-    },
-    takoyaki: {
-        title: "Takoyaki",
-        image: "https://media.istockphoto.com/id/1310599635/photo/japanese-takoyaki.jpg?s=612x612&w=0&k=20&c=InJ66ba4n0CkJODMSZfoNmQKlxagWFOv9n_0kMcoDqU=",
-        description: "hese golden, bite-sized octopus balls are a beloved street food from Osaka, known for their crispy outside and soft, savory inside. Made with a flavorful batter filled with diced octopus, green onions, and pickled ginger, takoyaki is cooked in a special griddle and served with a drizzle of tangy sauce, mayonnaise, bonito flakes, and seaweed powder. A fun and flavorful snack, perfect for sharing!"
-    },
     lumpia: {
-        title: "lumpia",
-        image: "http://www.kalesagrill.com/wp-content/uploads/lumpia-shanghai.jpg",
-        description: "A hearty and comforting rice bowl, donburi features a delicious topping served over steamed rice, making it a satisfying one-bowl meal. Popular varieties include gyudon (beef), katsudon (breaded pork cutlet), oyakodon (chicken and egg), and unadon (grilled eel). Whether sweet, savory, or umami-rich, each donburi offers a wholesome taste of Japan in every bite."
+        title: "Lumpiang Shanghai",
+        image: "img/lumpia-shanghai.jpg",
+        description: "Lumpiang Shanghai is a popular Filipino appetizer consisting of crispy, golden-brown spring rolls filled with a savory mixture of ground pork, finely chopped vegetables, and aromatic seasonings. Served with a sweet and tangy dipping sauce, this dish offers a perfect balance of flavors—crispy on the outside, juicy and flavorful on the inside. Whether enjoyed as a snack, party food, or part of a festive meal, Lumpiang Shanghai is a timeless Filipino favorite that never fails to delight.",
+        category: "Appetizer",
+        hours: "10AM - 10PM",
+        price: "₱180-400"
+    },
+    inasal: {
+        title: "Chicken Inasal",
+        image: "img/chicken-inasal.jpg",
+        description: "Chicken Inasal is a well-loved Filipino grilled chicken dish, marinated in a flavorful blend of calamansi juice, vinegar, annatto oil, garlic, ginger, and a mix of special spices. This marinade infuses the meat with a rich, tangy, and smoky taste while keeping it incredibly tender and juicy. Grilled over hot charcoal, the chicken develops a beautifully charred exterior, locking in all the delicious flavors. Chicken Inasal is a dish that perfectly embodies the bold and vibrant flavors of Filipino cuisine.",
+        category: "Grill/Main Dish",
+        hours: "11AM - 9PM",
+        price: "₱280-480"
+    },
+    leche_flan: {
+        title: "Leche Flan",
+        image: "img/leche-flan.jpg",
+        description: "Leche Flan is a rich, creamy, and velvety caramel custard dessert that is a staple in Filipino celebrations. The flan is topped with a golden caramel sauce, which adds a delightful sweetness that perfectly balances its creamy consistency. Once inverted onto a plate, the glossy caramel cascades down, creating an irresistible presentation. With its melt-in-your-mouth goodness and indulgent flavor, Leche Flan is a timeless dessert that embodies the warmth and sweetness of Filipino hospitality.",
+        category: "Dessert",
+        hours: "10AM - 10PM",
+        price: "₱120-380"
+    },
+    sinigang: {
+        title: "Sinigang",
+        image: "img/sinigang.jpg",
+        description: "Sinigang is a beloved Filipino sour soup known for its bold, tangy, and comforting flavors. This dish features tender pork simmered in a flavorful broth infused with tamarind, which gives it its signature sourness. A medley of fresh vegetables such as kangkong, radish, eggplant, string beans, and tomatoes add texture and depth to the dish. The balance of savory and sour flavors makes Sinigang a perfect companion to steamed rice, offering a refreshing contrast to rich and hearty meals.",
+        category: "Main Dish",
+        hours: "12PM - 10PM",
+        price: "₱220-840"
     }
 };
 
-
+// Open popup
 function openPopup(dishKey) {
     const popup = document.querySelector(".popup-overlay");
     const popupTitle = document.getElementById("popup-title");
     const popupImage = document.getElementById("popup-image");
     const popupDescription = document.getElementById("popup-description");
+    const popupCategory = document.getElementById("popup-category");
+    const popupHours = document.getElementById("popup-hours");
+    const popupPrice = document.getElementById("popup-price");
 
     if (dishes[dishKey]) {
         popupTitle.innerText = dishes[dishKey].title;
         popupImage.src = dishes[dishKey].image;
         popupDescription.innerText = dishes[dishKey].description;
+        popupCategory.innerText = `Category: ${dishes[dishKey].category}`;
+        popupHours.innerText = `Open: ${dishes[dishKey].hours}`;
+        popupPrice.innerText = `Price: ${dishes[dishKey].price}`;
     }
 
-    popup.classList.add("active"); 
-    document.body.classList.add("no-scroll"); 
+    popup.classList.add("active");
 }
 
-
+// Close popup
 function closePopup() {
     const popup = document.querySelector(".popup-overlay");
-    popup.classList.add("closing"); 
-
-    setTimeout(() => {
-        popup.classList.remove("active", "closing"); 
-        document.body.classList.remove("no-scroll"); 
-    }, 400); 
+    popup.classList.remove("active");
 }
 
-
+// Attach event listeners
 document.querySelectorAll(".menu-card").forEach(card => {
     card.addEventListener("click", function() {
         const dishKey = this.getAttribute("data-dish");
@@ -62,5 +69,4 @@ document.querySelectorAll(".menu-card").forEach(card => {
     });
 });
 
-
-document.querySelector(".close-btn").addEventListener("click", closePopup);
+document.querySelector(".btn-main-menu").addEventListener("click", closePopup);

@@ -5,10 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Guide</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
+
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark opacity-75 ">
+        <div class="container-fluid">
+            <strong><a class="navbar-brand text-white" href="#">Restaurant Guide</a></strong>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <strong><a class="nav-link text-white" href="#">Myles</a></strong>
+                    </li>
+                    <li class="nav-item">
+                        <strong><a class="nav-link text-white" href="#">Crisostomo</a></strong>
+                    </li>
+                    <li class="nav-item">
+                        <strong><a class="nav-link text-white" href="#">BSITWMA</a></strong>
+                    </li>
+                    <li class="nav-item">
+                        <strong><a class="nav-link text-white" href="#">TW23</a></strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <h1>Classic Filipino Menu</h1>
     <h2>Restaurant Guide</h2>
 
@@ -23,7 +51,7 @@
                 </div>
             </div> <!-- menu-card -->
 
-            <div class="menu-card" data-bs-toggle="modal" data-bs-target="#inasalModal">
+            <div class="menu-card" ddata-dish="inasal" onclick="openPopup('inasal')">
                 <img src="img/chicken-inasal.jpg" alt="Chicken Inasal">
                 <h4>Chicken Inasal</h4>
                 <div class="menu-card-text">
@@ -31,7 +59,7 @@
                 </div>
             </div> <!-- menu-card -->
 
-            <div class="menu-card" data-bs-toggle="modal" data-bs-target="#lecheFlanModal">
+            <div class="menu-card" ddata-dish="leche_flan" onclick="openPopup('leche_flan')">
                 <img src="img/leche-flan.jpg" alt="Leche Flan">
                 <h4>Leche Flan</h4>
                 <div class="menu-card-text">
@@ -39,7 +67,7 @@
                 </div>   
             </div> <!-- menu-card -->
 
-            <div class="menu-card" data-bs-toggle="modal" data-bs-target="#sinigangModal">
+            <div class="menu-card" ddata-dish="sinigang" onclick="openPopup('sinigang')">
                 <img src="img/sinigang.jpg" alt="Sinigang">
                 <h4>Sinigang</h4>
                 <div class="menu-card-text">
@@ -49,14 +77,23 @@
         </div> <!-- menu-container -->
 
         <!-- Full-Screen Pop-up -->
-        <div id="popup" class="popup-overlay">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2 id="popup-title"></h2>
-            <img id="popup-image" src="" alt="">
-            <p id="popup-description"></p>
+        <div class="popup-overlay">
+            <button class="btn-main-menu">Main Menu</button>
+            <div class="popup-content">
+                <div class="popup-image-container">
+                    <img id="popup-image" src="" alt="Dish Image">
+                </div>
+                <div class="popup-text">
+                    <h2 id="popup-title">Dish Name</h2>
+                    <p id="popup-description">Dish description goes here.</p>
+                    <div class="popup-info">
+                        <p id="popup-category"></p>
+                        <p id="popup-hours"></p>
+                        <p id="popup-price"></p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
