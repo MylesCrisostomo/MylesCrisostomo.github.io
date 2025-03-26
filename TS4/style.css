@@ -44,9 +44,9 @@ h2 {
 }
 
 .navbar {
-    height: 80px; /* Adjust height */
-    padding: 10px 20px; /* Adjust padding */
-    font-size: 18px; /* Adjust text size */
+    height: 80px; 
+    padding: 10px 20px; 
+    font-size: 18px; 
 }
 .menu-container {
     display: flex;
@@ -138,7 +138,7 @@ h2 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0); /* Darker background */
+    background-color: rgba(0, 0, 0, 0); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,7 +155,7 @@ h2 {
 }
 
 .popup-content {
-    display: flex; /* Makes it a two-column layout */
+    display: flex; 
     background: white;
     border-radius: 12px;
     margin-top: 11%;
@@ -169,9 +169,10 @@ h2 {
 }
 
 .popup-image-container {
-    flex: 1; /* Takes up half the space */
+    flex: 1; 
     padding: 10px;
     object-fit: cover;
+    height: auto; 
 }
 
 #popup-image {
@@ -179,16 +180,17 @@ h2 {
     height: 100%;
     max-height: 100%;
     border-radius: 8px;
-    object-fit: cover;
+    object-fit: cover;  
 }
 
 .popup-text {
-    flex: 1.2; /* Slightly bigger text section */
+    flex: 1.2; 
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
+    overflow: scroll;
 }
 
 .popup-text h2 {
